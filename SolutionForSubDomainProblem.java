@@ -3,8 +3,6 @@ import java.io.*;
 
 class Solution2 {
     public static void main(String[] cpdomains) throws IOException {
-        Hashtable<String, Integer> subdomainTable = new Hashtable<String, Integer>();
-        Hashtable<String, Integer> finalTable = new Hashtable<String, Integer>();
         Map<String, Integer> counts = new HashMap<String, Integer>();
         try {
             File f = new File("textFile.txt");
@@ -15,10 +13,10 @@ class Solution2 {
             }
 
             String[] arr = lines.toArray(new String[0]);
-            
+
             for (String domain: arr) {
-                String[] cpinfo = domain.split("\\s+");               
-                String[] frags = cpinfo[1].split("\\.");                             
+                String[] cpinfo = domain.split("\\s+");
+                String[] frags = cpinfo[1].split("\\.");
                 int count = Integer.valueOf(cpinfo[0]);
                 String cur = "";
                 for (int i = frags.length - 1; i >= 0; i--) {
@@ -37,4 +35,3 @@ class Solution2 {
         }
     }
 }
-
